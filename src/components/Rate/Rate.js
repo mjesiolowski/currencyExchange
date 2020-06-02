@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { getRoundedValue } from '../../utils';
 import { DEFAULT_RATE } from '../../constants';
+import { WrapperDivElement } from '../../styles';
 
-export const App = ({
+export const Rate = ({
   currencyRate,
   setRate,
 }) => {
@@ -29,25 +30,22 @@ export const App = ({
   const handleSubmit = (e) => e.preventDefault();
 
   return (
-    <>
-      <h1>TEST App.js</h1>
+    <WrapperDivElement>
+      <form
+        onSubmit={handleSubmit}
+        noValidate={true}
+      >
+        <label>Set rate: </label>
+        <input
+          type="number"
+          value={rateInput}
+          onChange={(e) => handleSetRate(e)}
+          autoFocus={true}
+        />
+      </form>
       <div>
-        <form
-          onSubmit={handleSubmit}
-          noValidate={true}
-        >
-          <label>Set rate: </label>
-          <input
-            type="number"
-            value={rateInput}
-            onChange={(e) => handleSetRate(e)}
-            autoFocus={true}
-          />
-        </form>
-        <div>
-          <p>Current rate: {currencyRate}</p>
-        </div>
+        <p>Current rate: {currencyRate}</p>
       </div>
-    </>
+    </WrapperDivElement>
   );
 };

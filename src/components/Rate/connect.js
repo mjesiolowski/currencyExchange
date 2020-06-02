@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { App } from './App';
+import { Rate } from './Rate';
 import { getCurrencyRate } from '../../selectors';
 import { setRate } from '../../actions';
 
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   createStructuredSelector({ currencyRate: getCurrencyRate }),
   mapDispatchToProps,
-)(App);
+)(Rate);
