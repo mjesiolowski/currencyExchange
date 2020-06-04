@@ -1,5 +1,3 @@
-export const getCurrencyRate = ({ configuration }) => configuration.rate;
-
 export const getTransactions = ({ transactions }) => transactions;
 
 export const getBiggestTransaction = _.compose(
@@ -11,7 +9,6 @@ export const getTransactionSum = _.compose(
   _.sumBy('amount'),
   getTransactions,
 );
-
 
 export const isTransactionNameDuplicated = (state) => (name) => _.compose(
   Boolean,
