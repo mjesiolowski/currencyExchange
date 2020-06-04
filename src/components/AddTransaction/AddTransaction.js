@@ -16,7 +16,6 @@ export const AddTransaction = ({
 
   const handleAddTransaction = (e) => {
     e.preventDefault();
-    console.log({ nameInput, amountInput });
 
     if (isTransactionNameDuplicated(nameInput)) {
       return setNameInputError(DUPLICATED);
